@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Surprise Hamper</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#fff9fb,#fff3f7);
+    padding:40px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.page-title{
+    text-align:center;
+    color:#ff4f81;
+    font-size:2.8rem;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:40px;
+}
+
+.hamper-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.hamper-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.hamper-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.hamper-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-content{
+    padding:25px;
+    text-align:center;
+}
+
+.hamper-card h2{
+    color:#333;
+    margin-bottom:10px;
+}
+
+.description{
+    color:#777;
+    font-size:14px;
+    margin-bottom:15px;
+    min-height:40px;
+}
+
+.price{
+    font-size:2rem;
+    color:#d4af37;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.buy-btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:linear-gradient(135deg,#ff4f81,#ff7aa2);
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    transform:scale(1.05);
+}
+
+@media(max-width:768px){
+    .hamper-card img{
+        height:280px;
+    }
+
+    .page-title{
+        font-size:2rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="page-title">Womens Special Hampers</h1>
+    <p class="subtitle">Choose the perfect hamper for your loved ones ✨</p>
+
+    <div class="hamper-grid">
+
+        <!-- Small Hamper -->
+        <div class="hamper-card">
+            <img src="images/women1.jpg" alt="Small Hamper">
+
+            <div class="card-content">
+                <h2>Small Hamper</h2>
+                <p class="description">
+                    A thoughtful surprise gift packed with love and premium goodies.
+                </p>
+
+                <div class="price">₹699</div>
+
+                <a href="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Small%20Hamper"
+                   class="buy-btn">
+                   Buy Now
+                </a>
+            </div>
+        </div>
+
+        <!-- Medium Hamper -->
+        <div class="hamper-card">
+            <img src="images/women2.jpg" alt="Medium Hamper">
+
+            <div class="card-content">
+                <h2>Medium Hamper</h2>
+                <p class="description">
+                    More gifts, more surprises, and a premium gifting experience.
+                </p>
+
+                <div class="price">₹1,399</div>
+
+                <a href="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Medium%20Hamper"
+                   class="buy-btn">
+                   Buy Now
+                </a>
+            </div>
+        </div>
+
+        <!-- Large Hamper -->
+        <div class="hamper-card">
+            <img src="images/women3.jpg" alt="Large Hamper">
+
+            <div class="card-content">
+                <h2>Large Hamper</h2>
+                <p class="description">
+                    The ultimate luxury hamper loaded with premium gifts and surprises.
+                </p>
+
+                <div class="price">₹3,399</div>
+
+                <a href="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Large%20Hamper"
+                   class="buy-btn">
+                   Buy Now
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
