@@ -249,6 +249,75 @@ footer{
         font-size:2rem;
     }
 }
+
+.whatsapp-btn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#25D366;
+    color:white;
+    padding:15px 25px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    z-index:999;
+}
+/* ACHIEVEMENTS SECTION */
+.achievements{
+    padding:80px 10%;
+    background:linear-gradient(135deg,#fff0f5,#fff8e7);
+}
+
+.achievement-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.achievement-card{
+    background:white;
+    border-radius:25px;
+    padding:35px 20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.achievement-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:6px;
+    background:linear-gradient(to right,#ff4f81,#d4af37);
+}
+
+.achievement-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(255,79,129,0.2);
+}
+
+.icon{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.achievement-card h3{
+    font-size:2.8rem;
+    color:#ff4f81;
+    margin-bottom:8px;
+    font-weight:700;
+}
+
+.achievement-card p{
+    color:#666;
+    font-size:1rem;
+    font-weight:500;
+}
 </style>
 </head>
 <body>
@@ -313,6 +382,32 @@ footer{
 
     </div>
 </section>
+<section class="why-us">
+    <h2 class="section-title">Why Choose Us?</h2>
+
+    <div class="products">
+        <div class="card">
+            <div class="card-content">
+                <h3>🎁 Customized Hampers</h3>
+                <p>Personalized gifts designed according to your requirements.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>🚚 Fast Delivery</h3>
+                <p>Quick and safe delivery for all special occasions.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>💖 Premium Quality</h3>
+                <p>Handpicked products with beautiful packaging.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <!-- Our Created Hampers Gallery -->
@@ -351,6 +446,67 @@ footer{
 
 </div>
 </section>
+<section>
+    <h2 class="section-title">Customer Reviews</h2>
+
+    <div class="products">
+        <div class="card">
+            <div class="card-content">
+                <h3>⭐⭐⭐⭐⭐</h3>
+                <p>"The hamper was beautifully packed. My wife loved it!"</p>
+                <strong>- Rahul</strong>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>⭐⭐⭐⭐⭐</h3>
+                <p>"Amazing quality and timely delivery."</p>
+                <strong>- Priya</strong>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h3>⭐⭐⭐⭐⭐</h3>
+                <p>"Perfect surprise gift for anniversaries."</p>
+                <strong>- Aman</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="achievements">
+    <h2 class="section-title">Our Achievements</h2>
+
+    <div class="achievement-grid">
+
+        <div class="achievement-card">
+            <div class="icon">😊</div>
+            <h3>500+</h3>
+            <p>Happy Customers</p>
+        </div>
+
+        <div class="achievement-card">
+            <div class="icon">🎁</div>
+            <h3>1000+</h3>
+            <p>Hampers Delivered</p>
+        </div>
+
+        <div class="achievement-card">
+            <div class="icon">✨</div>
+            <h3>50+</h3>
+            <p>Custom Designs</p>
+        </div>
+
+        <div class="achievement-card">
+            <div class="icon">⭐</div>
+            <h3>5★</h3>
+            <p>Customer Rating</p>
+        </div>
+
+    </div>
+</section>
 
 <section class="about">
     <h2 class="section-title">About Mahi Surprise Hub</h2>
@@ -362,17 +518,41 @@ footer{
     </p>
 </section>
 
+<section>
+    <h2 class="section-title">FAQs</h2>
+
+    <div class="about">
+        <p><strong>Can I customize my hamper?</strong><br>
+        Yes, every hamper can be personalized.</p>
+
+        <p><strong>Do you offer same-day delivery?</strong><br>
+        Depending on location and availability.</p>
+
+        <p><strong>Can I add photos and messages?</strong><br>
+        Absolutely! We specialize in personalized surprises.</p>
+    </div>
+</section>
+
 <section class="contact">
     <h2 class="section-title">Contact Us</h2>
+
     <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
     <p><strong>WhatsApp:</strong> +91 XXXXX XXXXX</p>
     <p><strong>Email:</strong> mahisurprisehub@gmail.com</p>
-    <p><strong>Instagram:</strong> @mahisurprisehub</p>
+
+    <a href="https://instagram.com/mahisurprisehub"
+       class="btn"
+       target="_blank">
+       Follow Us on Instagram
+    </a>
 </section>
 
 <footer>
     © 2026 Mahi Surprise Hub | All Rights Reserved
 </footer>
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-btn">
+    Order on WhatsApp
+</a>
 
 </body>
 </html>
