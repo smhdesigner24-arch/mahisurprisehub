@@ -50,8 +50,16 @@ body{
     overflow:hidden;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
     transition:.3s;
+    display:flex;
+    flex-direction:column;
 }
 
+.card-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
 .hamper-card:hover{
     transform:translateY(-8px);
     box-shadow:0 20px 40px rgba(0,0,0,.12);
@@ -59,7 +67,8 @@ body{
 
 .hamper-card img{
     width:100%;
-    height:auto;
+    height:400px;      /* Same height for all images */
+    object-fit:cover;  /* Prevents image distortion */
     display:block;
 }
 
@@ -79,59 +88,168 @@ body{
     margin-bottom:15px;
     min-height:40px;
 }
-
-.price{
-    font-size:2rem;
-    color:#d4af37;
-    font-weight:700;
+.contents{
+    text-align:left;
+    background:#fff8fb;
+    padding:15px;
+    border-radius:12px;
     margin-bottom:20px;
 }
 
+.contents h4{
+    color:#ff4f81;
+    margin-bottom:10px;
+    font-size:16px;
+}
+
+.contents ul{
+    padding-left:18px;
+}
+
+.contents li{
+    color:#555;
+    margin-bottom:6px;
+    font-size:14px;
+}
+.price{
+    font-size:2.3rem;
+    font-weight:700;
+    color:#ff4f81;
+    margin-top:auto;
+}
 .buy-btn{
-    display:inline-block;
-    padding:14px 35px;
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:15px;
     background:linear-gradient(135deg,#ff4f81,#ff7aa2);
     color:#fff;
     text-decoration:none;
     border-radius:50px;
     font-weight:600;
+    margin-top:15px;
     transition:.3s;
 }
 
 .buy-btn:hover{
-    transform:scale(1.05);
+    transform:translateY(-2px);
 }
 
+
+.hamper-gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    padding:10px;
+}
+
+.hamper-gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.hamper-gallery img:hover{
+    transform:scale(1.03);
+}
+
+.hamper-card{
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.4s;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+.hamper-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 45px rgba(0,0,0,.15);
+}
+
+.hamper-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:35px;
+    align-items:start;
+}
+.hero{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.hero h1{
+    font-size:3rem;
+    color:#ff4f81;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#777;
+    font-size:1.1rem;
+}
+.badge{
+    display:inline-block;
+    background:#ffe4ec;
+    color:#ff4f81;
+    padding:8px 15px;
+    border-radius:50px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:15px;
+}
 @media(max-width:768px){
     .hamper-card img{
-        height:280px;
+        height:320px;
+    }
     }
 
-    .page-title{
-        font-size:2rem;
-    }
-}
+
 </style>
 </head>
 <body>
+    <section class="hero">
+    <h1>💖 Women's Special Hampers</h1>
+    <p>Handcrafted luxury gift hampers filled with love, surprises and memories.</p>
+</section>
 
 <div class="container">
 
-    <h1 class="page-title">Womens Special Hampers</h1>
-    <p class="subtitle">Choose the perfect hamper for your loved ones ✨</p>
+   
 
     <div class="hamper-grid">
 
         <!-- Small Hamper -->
         <div class="hamper-card">
-            <img src="women1.jpg" alt="Small Hamper">
+  <div class="hamper-gallery">
+    <img src="women1.jpg" alt="Small Hamper">
+    <img src="women1-2.jpg" alt="Small Hamper">
+</div>
 
             <div class="card-content">
                 <h2>Small Hamper</h2>
                 <p class="description">
-                    A thoughtful surprise gift packed with love and premium goodies.
-                </p>
+    A thoughtful surprise gift packed with love and premium goodies.
+</p>
 
+<div class="contents">
+    <h4>🎁 What's Inside:</h4>
+    <ul>
+        <li>Personalized card and Necklace</li>
+        <li>Glimmer Nail Set</li>
+        <li>Pearl Necklace</li>
+        <li>Scrunchie</li>
+        <li>Ring</li>
+        <li>Lipstick</li>
+        <li>Star Keychain</li>
+        <li>Flower Hair Claw</li>
+    </ul>
+</div>
+<div class="badge">✨ Best Seller</div>
                 <div class="price">₹699</div>
 
                 <a href="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Small%20Hamper"
@@ -148,9 +266,29 @@ body{
             <div class="card-content">
                 <h2>Medium Hamper</h2>
                 <p class="description">
-                    More gifts, more surprises, and a premium gifting experience.
-                </p>
+    More gifts, more surprises, and a premium gifting experience.
+</p>
 
+<div class="contents">
+    <h4>🎁 What's Inside:</h4>
+    <ul>
+        <li>Birthday Card</li>
+        <li>Hoop Earings</li>
+        <li>Bracelate</li>
+        <li>Nail Polish</li>
+        <li>Flower Compact</li>
+        <li>Rose</li>
+        <li>Chocolate</li>
+        <li>Blue Heaven Lipstick</li>
+        <li>Initial Necklace</li>
+        <li>Keychain</li>
+        <li>Scrunchie</li>
+        <li>Teddy Bear</li>
+       
+      
+    </ul>
+</div>
+<div class="badge">💝 Most Popular</div>
                 <div class="price">₹999</div>
 
                 <a href="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Medium%20Hamper"
@@ -166,10 +304,41 @@ body{
 
             <div class="card-content">
                 <h2>Large Hamper</h2>
-                <p class="description">
-                    The ultimate luxury hamper loaded with premium gifts and surprises.
-                </p>
+              <p class="description">
+    The ultimate luxury hamper loaded with premium gifts and surprises.
+</p>
 
+<div class="contents">
+    <h4>🎁 What's Inside:</h4>
+    <ul>
+        <li>Large Teddy Bear</li>
+        <li>Love Letter Card</li>
+        <li>Hoop Earings</li>
+        <li>Bracelate</li>
+        <li>Nail Polish</li>
+        <li>Flower Compact</li>
+        <li>Rose</li>
+        <li>Chocolate</li>
+        <li>Blue Heaven Lipstick</li>
+        <li>Initial Necklace</li>
+        <li>Keychain</li>
+        <li>Scrunchie</li>
+        <li>Bangles</li>
+        <li>Lip Balm</li>
+        <li>Kinder Joy</li>
+        <li>Chain</li>
+        <li>Blusher</li>
+        <li>Facewash</li>
+        <li>Mirror</li>
+        <li>Eyeliner</li>
+        <li>Kajal</li>
+        <li>Eye Shadow</li>
+        <li>Your Photos</li>
+        <li>Light In Box</li>
+        
+    </ul>
+</div>
+<div class="badge">👑 Luxury Edition</div>
                 <div class="price">₹3999</div>
 
                 <a href="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Large%20Hamper"
