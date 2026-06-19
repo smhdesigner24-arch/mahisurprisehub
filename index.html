@@ -79,6 +79,39 @@ body{
     color:#333;
 }
 
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 8%;
+
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
+
+.logo{
+    font-size:1.3rem;
+    font-weight:700;
+    color:#ff4f81;
+}
+
+.nav-links a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:#ff4f81;
+}
 /* HERO SECTION */
 header{
     background:
@@ -450,6 +483,15 @@ footer{
 <div class="heart" style="left:50%;animation-delay:4s;">❤️</div>
 <div class="heart" style="left:70%;animation-delay:1s;">❤️</div>
 <div class="heart" style="left:90%;animation-delay:3s;">❤️</div>
+<nav class="navbar">
+    <div class="logo">Mahi Surprise Hub</div>
+
+    <div class="nav-links">
+        <a href="#products">Hampers</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
 <header>
     <h1>Mahi Surprise Hub</h1>
@@ -690,7 +732,7 @@ Watch Our Reel
 </div>
 
 </section>
-<section class="about">
+<section class="about" id="about">
     <h2 class="section-title">About Mahi Surprise Hub</h2>
     <p>
         At Mahi Surprise Hub, we create memorable gift hampers for every occasion.
@@ -750,7 +792,7 @@ d="M0,64L80,80C160,96,320,128,480,128C640,128,800,96,960,85.3C1120,75,1280,85,13
 </div>
 </section>
 
-<section class="contact">
+<section class="contact" id="contact">
     <h2 class="section-title">Contact Us</h2>
 
     <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
