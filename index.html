@@ -103,14 +103,21 @@ body{
 }
 
 .nav-links a{
-    margin-left:20px;
     text-decoration:none;
-    color:#333;
+    color:#ff4f81;
     font-weight:600;
+    padding:8px 15px;
+    background:white;
+    border:2px solid #ffb6c9;
+    border-radius:25px;
+    box-shadow:0 4px 12px rgba(255,79,129,0.15);
+    transition:0.3s;
 }
 
 .nav-links a:hover{
-    color:#ff4f81;
+    background:#ff4f81;
+    color:white;
+    transform:translateY(-2px);
 }
 /* HERO SECTION */
 header{
@@ -316,33 +323,137 @@ footer{
     padding:25px;
     margin-top:50px;
 }
-
-/* MOBILE */
-@media(max-width:768px){
-    header h1{
-        font-size:2.5rem;
-    }
-
-    .section-title{
-        font-size:2rem;
-    }
-}
-
 .whatsapp-btn{
     position:fixed;
-    right:20px;
     bottom:20px;
-    background:#25D366;
-    color:white;
-    padding:15px 25px;
+    right:20px;
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    background:linear-gradient(135deg,#25D366,#128C7E);
+    color:#fff;
+
+    padding:14px 22px;
     border-radius:50px;
+
     text-decoration:none;
+    font-size:15px;
     font-weight:600;
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
-    z-index:999;
+
+    box-shadow:0 8px 25px rgba(37,211,102,.35);
 
     animation:pulse 2s infinite;
+    transition:.3s ease;
 }
+
+.whatsapp-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(37,211,102,.45);
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+    .products{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .gallery-grid{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .card img,
+    .gallery-item img{
+        height:120px;
+    }
+
+    .card-content{
+        padding:10px;
+    }
+
+    .card h3{
+        font-size:14px;
+    }
+
+    .card p{
+        font-size:12px;
+    }
+
+    .price{
+        font-size:14px;
+    }
+       .navbar{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:12px;
+    }
+
+    .nav-links{
+        display:flex;
+        gap:8px;
+        flex-wrap:nowrap;
+    }
+
+    .nav-links a{
+        padding:6px 12px;
+        font-size:12px;
+        border-radius:20px;
+        white-space:nowrap;
+    }
+
+    .logo{
+        font-size:1.1rem;
+    }
+    /* Mobile Hero Section */
+header{
+    padding:60px 15px;
+}
+
+header h1{
+    font-size:1.8rem;
+    line-height:1.2;
+    letter-spacing:1px;
+}
+
+header p{
+    font-size:0.85rem;
+    margin-top:8px;
+}
+
+.btn{
+    padding:10px 24px;
+    font-size:0.85rem;
+    margin-top:18px;
+}
+
+    .whatsapp-btn{
+        bottom:15px;
+        right:15px;
+
+        padding:12px 18px;
+        font-size:13px;
+
+        border-radius:40px;
+
+        box-shadow:0 6px 20px rgba(37,211,102,0.4);
+    }
+
+    .whatsapp-btn::before{
+        font-size:18px;
+    }
+
+}
+
+
 @keyframes pulse{
 
     0%{
@@ -575,7 +686,7 @@ BEST SELLER
 </div>
 </section>
 
-</section>
+
 
 <div class="wave">
     <svg xmlns="http://www.w3.org/2000/svg"
@@ -795,8 +906,7 @@ d="M0,64L80,80C160,96,320,128,480,128C640,128,800,96,960,85.3C1120,75,1280,85,13
 <section class="contact" id="contact">
     <h2 class="section-title">Contact Us</h2>
 
-    <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
-    <p><strong>WhatsApp:</strong> +91 XXXXX XXXXX</p>
+   
     <p><strong>Email:</strong> mahisurprisehub@gmail.com</p>
 
     <a href="https://instagram.com/mahisurprisehub"
@@ -818,8 +928,8 @@ d="M0,64L80,80C160,96,320,128,480,128C640,128,800,96,960,85.3C1120,75,1280,85,13
 <footer>
     © 2026 Mahi Surprise Hub | All Rights Reserved
 </footer>
-<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-btn">
-    Order on WhatsApp
+<a href="https://wa.me/7066503309" class="whatsapp-btn">
+    💬 Order Now
 </a>
 <script>
 
