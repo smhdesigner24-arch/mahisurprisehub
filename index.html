@@ -146,7 +146,7 @@ header p{
     margin-top:15px;
     font-size:1.3rem;
 }
-
+ 
 .btn{
     display:inline-block;
     margin-top:30px;
@@ -450,6 +450,35 @@ header p{
     .whatsapp-btn::before{
         font-size:18px;
     }
+    /* Mobile Achievement Section */
+    .achievement-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+/* Mobile Achievement Section */
+
+.achievement-grid{
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:12px;
+}
+
+.achievement-card{
+    min-height:120px;
+    padding:15px 8px;
+}
+
+.icon{
+    font-size:1.8rem;
+}
+
+.achievement-card h3{
+    font-size:1.5rem;
+}
+
+.achievement-card p{
+    font-size:0.75rem;
+}
 
 }
 
@@ -480,10 +509,9 @@ header p{
 
 .achievement-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(4,1fr);
     gap:25px;
 }
-
 .achievement-card{
     background:white;
     border-radius:25px;
@@ -579,6 +607,87 @@ header p{
     border-radius:20px;
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
+#popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+z-index:99999;
+}
+
+#popup img{
+max-width:90%;
+max-height:90%;
+border-radius:15px;
+}
+.top-btn{
+position:fixed;
+bottom:90px;
+right:20px;
+width:50px;
+height:50px;
+background:#ff4f81;
+color:white;
+text-decoration:none;
+font-size:28px;
+font-weight:bold;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+/* Rotating Heart Below Button */
+.rotating-heart{
+    margin-top:20px;
+    font-size:55px;
+    display:inline-block;
+    animation:heartRotate 4s linear infinite,
+              heartGlow 2s ease-in-out infinite;
+    transform-origin:center;
+}
+
+@keyframes heartRotate{
+    from{
+        transform:rotateY(0deg);
+    }
+    to{
+        transform:rotateY(360deg);
+    }
+}
+
+@keyframes heartGlow{
+    0%,100%{
+        filter:drop-shadow(0 0 5px #ff4f81);
+    }
+    50%{
+        filter:drop-shadow(0 0 20px #ff4f81);
+    }
+}
+.header-heart{
+    display:block;
+    text-align:center;
+    font-size:65px;
+    margin-top:15px;
+    animation:heartFlip 3s ease-in-out infinite;
+    transform-style:preserve-3d;
+}
+
+@keyframes heartFlip{
+    0%,100%{
+        transform:rotateY(0deg);
+    }
+
+    50%{
+        transform:rotateY(180deg);
+    }
+}
 </style>
 </head>
 <body>
@@ -608,17 +717,15 @@ header p{
     <h1>Mahi Surprise Hub</h1>
     <p>Beautiful Gift Hampers for Men & Women</p>
     <a href="#products" class="btn">View Hampers</a>
-    <div class="wave">
-    <svg xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 1440 320">
-        <path fill="#ffffff"
-              fill-opacity="1"
-              d="M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,149.3C1120,128,1280,128,1360,133.3L1440,139L1440,320L0,320Z">
-        </path>
-    </svg>
-</div>
+<div class="header-heart">💖</div>
 </header>
+<section style="text-align:center;padding:40px;">
+<h2>🎉 Special Offer Ends In</h2>
 
+<div id="countdown"
+style="font-size:2rem;color:#ff4f81;font-weight:bold;">
+</div>
+</section>
 
 <section id="products">
     <h2 class="section-title">Our Gift Hampers</h2>
@@ -723,7 +830,37 @@ BEST SELLER
         </div>
     </div>
 </section>
+<section class="achievements">
 
+<h2 class="section-title">
+Why Customers Trust Us
+</h2>
+
+<div class="achievement-grid">
+
+<div class="achievement-card">
+<div class="icon">🔒</div>
+<p>Secure Payments</p>
+</div>
+
+<div class="achievement-card">
+<div class="icon">🚚</div>
+<p>Fast Delivery</p>
+</div>
+
+<div class="achievement-card">
+<div class="icon">🎁</div>
+<p>Premium Packaging</p>
+</div>
+
+<div class="achievement-card">
+<div class="icon">💖</div>
+<p>100% Handmade</p>
+</div>
+
+</div>
+
+</section>
 
 <!-- Our Created Hampers Gallery -->
 <section class="gallery">
@@ -843,6 +980,38 @@ Watch Our Reel
 </div>
 
 </section>
+<section class="contact">
+
+<h2 class="section-title">
+Create Your Own Hamper
+</h2>
+
+<p>
+Choose chocolates, flowers, photos,
+letters and gifts according to your budget.
+</p>
+
+<a href="https://wa.me/7066503309"
+class="btn">
+Customize Now
+</a>
+
+</section>
+<section>
+
+<h2 class="section-title">
+Customer Video Reviews
+</h2>
+
+<div class="video-container">
+
+<video controls>
+<source src="review1.mp4" type="video/mp4">
+</video>
+
+</div>
+
+</section>
 <section class="about" id="about">
     <h2 class="section-title">About Mahi Surprise Hub</h2>
     <p>
@@ -875,21 +1044,24 @@ Instagram Highlights
 
 <div class="gallery-grid">
 
-<div class="gallery-item">
-<img src="insta1.jpg">
+    <div class="gallery-item">
+        <img src="insta1.jpg" class="popup-img">
+    </div>
+
+    <div class="gallery-item">
+        <img src="insta2.jpg" class="popup-img">
+    </div>
+
+    <div class="gallery-item">
+        <img src="insta3.jpg" class="popup-img">
+    </div>
+
+    <div class="gallery-item">
+        <img src="insta4.jpg" class="popup-img">
+    </div>
+
 </div>
 
-<div class="gallery-item">
-<img src="insta2.jpg">
-</div>
-
-<div class="gallery-item">
-<img src="insta3.jpg">
-</div>
-
-<div class="gallery-item">
-<img src="insta4.jpg">
-</div>
 
 </div>
 <div class="wave">
@@ -928,6 +1100,7 @@ d="M0,64L80,80C160,96,320,128,480,128C640,128,800,96,960,85.3C1120,75,1280,85,13
 <footer>
     © 2026 Mahi Surprise Hub | All Rights Reserved
 </footer>
+<a href="#" class="top-btn">↑</a>
 <a href="https://wa.me/7066503309" class="whatsapp-btn">
     💬 Order Now
 </a>
@@ -939,6 +1112,22 @@ document.getElementById("loader").style.display="none";
 
 }
 
+let endDate = new Date("Dec 31, 2026 23:59:59").getTime();
+
+setInterval(function(){
+
+let now = new Date().getTime();
+let distance = endDate - now;
+
+let days = Math.floor(distance/(1000*60*60*24));
+let hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("countdown").innerHTML =
+days + " Days " + hours + " Hours";
+
+},1000);
+
 </script>
+
 </body>
 </html>
