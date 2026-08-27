@@ -1,64 +1,690 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>SkinCare Premium Hamper</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkinCare Premium Hamper — Mahi Surprise Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body{
-font-family:Poppins,sans-serif;
-background:#fff9fb;
-padding:40px;
+:root{
+    --ink:#241f1e;
+    --ink-soft:#5a5150;
+    --ivory:#fdfaf6;
+    --ivory-deep:#f7f0e8;
+    --blush:#f6e4e2;
+    --blush-deep:#e9c9c6;
+    --rose:#b5646b;
+    --rose-deep:#8f4650;
+    --gold:#c19a5b;
+    --gold-light:#e4cd9c;
+    --gold-pale:#f3e6c9;
+    --line:rgba(36,31,30,0.08);
+    --shadow-sm:0 4px 20px rgba(36,31,30,0.06);
+    --shadow-md:0 12px 40px rgba(36,31,30,0.10);
+    --shadow-lg:0 24px 60px rgba(36,31,30,0.14);
+    --radius:18px;
+    --radius-lg:28px;
 }
 
-.container{
-max-width:900px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:var(--ivory);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+}
+
+h1,h2{
+    font-family:'Cormorant Garamond', serif;
 }
 
 img{
-width:100%;
-border-radius:15px;
+    display:block;
+    max-width:100%;
 }
 
-.buy-btn{
-display:inline-block;
-padding:15px 35px;
-background:#ff4f81;
-color:white;
-text-decoration:none;
-border-radius:50px;
-margin-top:20px;
+a{
+    color:inherit;
+}
+
+::selection{
+    background:var(--blush-deep);
+    color:var(--rose-deep);
+}
+
+::-webkit-scrollbar{ width:10px; }
+::-webkit-scrollbar-track{ background:var(--ivory-deep); }
+::-webkit-scrollbar-thumb{ background:var(--gold-light); border-radius:10px; }
+
+a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+}
+
+/* ---------- EYEBROW ---------- */
+.eyebrow{
+    display:inline-block;
+    font-size:0.72rem;
+    font-weight:600;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:14px;
+}
+
+.eyebrow::before{
+    content:'';
+    display:inline-block;
+    width:26px;
+    height:1px;
+    background:var(--gold);
+    margin-right:10px;
+    vertical-align:middle;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 6%;
+
+    background:rgba(253,250,246,0.86);
+    backdrop-filter:blur(14px) saturate(160%);
+    -webkit-backdrop-filter:blur(14px) saturate(160%);
+
+    border-bottom:1px solid var(--line);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.5rem;
+    font-weight:600;
+    color:var(--ink);
+    letter-spacing:0.3px;
+}
+
+.logo .back-arrow{
+    font-family:'Poppins', sans-serif;
+    font-size:1.1rem;
+    color:var(--gold);
+    transition:.3s;
+}
+
+.logo:hover .back-arrow{
+    transform:translateX(-4px);
+}
+
+.logo span{
+    color:var(--rose);
+    font-style:italic;
+}
+
+.nav-links{
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-weight:500;
+    font-size:0.88rem;
+    padding:9px 18px;
+    border-radius:30px;
+    letter-spacing:0.3px;
+    transition:.3s ease;
+}
+
+.nav-links a:hover{
+    background:var(--ink);
+    color:var(--ivory);
+}
+
+.nav-links a.nav-cta{
+    background:var(--ink);
+    color:var(--ivory);
+    padding:10px 22px;
+}
+
+.nav-links a.nav-cta:hover{
+    background:var(--rose-deep);
+}
+
+/* ---------- PRIMARY BUTTON ---------- */
+.btn{
+    display:inline-block;
+    padding:15px 36px;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:#2b2117;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    font-size:0.92rem;
+    letter-spacing:0.3px;
+    box-shadow:0 10px 28px rgba(193,154,91,0.32);
+    transition:.35s cubic-bezier(.22,.9,.32,1);
+    border:none;
+    cursor:pointer;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 34px rgba(193,154,91,0.42);
+}
+
+/* ---------- PRODUCT SECTION ---------- */
+.product-section{
+    padding:64px 8% 90px;
+}
+
+.product-detail{
+    max-width:1080px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+}
+
+.product-media{
+    position:relative;
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow-lg);
+    aspect-ratio:4/4.6;
+    background:var(--ivory-deep);
+}
+
+.product-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.product-tag{
+    position:absolute;
+    top:18px;
+    left:18px;
+    background:rgba(253,250,246,0.92);
+    backdrop-filter:blur(6px);
+    color:var(--ink);
+    border:1px solid var(--gold-light);
+    padding:7px 18px;
+    border-radius:20px;
+    font-size:0.7rem;
+    font-weight:600;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.product-info h1{
+    font-size:2.7rem;
+    font-weight:600;
+    color:var(--ink);
+    line-height:1.15;
+    margin-bottom:12px;
+}
+
+.tagline{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.25rem;
+    color:var(--rose-deep);
+    margin-bottom:26px;
+}
+
+.contents{
+    text-align:left;
+    background:var(--ivory-deep);
+    border:1px solid var(--line);
+    padding:20px 22px;
+    border-radius:var(--radius);
+    margin-bottom:28px;
+}
+
+.contents h4{
+    color:var(--rose-deep);
+    margin-bottom:12px;
+    font-size:0.82rem;
+    font-weight:600;
+    letter-spacing:0.5px;
+}
+
+.contents ul{
+    list-style:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 16px;
+}
+
+.contents li{
+    color:var(--ink-soft);
+    font-size:0.88rem;
+    font-weight:300;
+    padding-left:22px;
+    position:relative;
+}
+
+.contents li::before{
+    content:'✓';
+    position:absolute;
+    left:0;
+    color:var(--gold);
+    font-weight:700;
 }
 
 .price{
-font-size:2rem;
-font-weight:bold;
-color:#d4af37;
-margin:20px 0;
+    font-family:'Cormorant Garamond', serif;
+    font-size:2.6rem;
+    font-weight:700;
+    color:var(--rose-deep);
+    margin-bottom:22px;
+}
+
+.secure-note{
+    display:block;
+    margin-top:16px;
+    font-size:0.8rem;
+    color:var(--ink-soft);
+    font-weight:300;
+}
+
+/* ---------- TRUST STRIP ---------- */
+.trust-strip{
+    padding:56px 8%;
+    background:var(--ink);
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    max-width:1100px;
+    margin:0 auto;
+}
+
+.trust-item{
+    text-align:center;
+    color:var(--ivory);
+    padding:16px 10px;
+    border-right:1px solid rgba(253,250,246,0.12);
+}
+
+.trust-item:last-child{
+    border-right:none;
+}
+
+.trust-item .icon{
+    font-size:1.6rem;
+    margin-bottom:8px;
+    opacity:0.9;
+}
+
+.trust-item p{
+    font-size:0.8rem;
+    font-weight:400;
+    letter-spacing:0.3px;
+    color:rgba(253,250,246,0.85);
+}
+
+/* ---------- CUSTOM CTA ---------- */
+.contact{
+    background:linear-gradient(135deg,var(--ink) 0%,#3a2f2c 100%);
+    border-radius:var(--radius-lg);
+    text-align:center;
+    padding:76px 8%;
+    color:var(--ivory);
+    position:relative;
+    overflow:hidden;
+    margin:90px 5%;
+}
+
+.contact::before{
+    content:'';
+    position:absolute;
+    top:-60px;
+    right:-60px;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(193,154,91,0.25), transparent 70%);
+}
+
+.contact h2{
+    font-size:2.3rem;
+    font-weight:600;
+    color:var(--ivory);
+}
+
+.contact p{
+    margin:16px auto 0;
+    font-size:1rem;
+    font-weight:300;
+    color:rgba(253,250,246,0.82);
+    max-width:440px;
+    line-height:1.7;
+}
+
+.contact .btn{
+    margin-top:32px;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+    background:var(--ink);
+    color:rgba(253,250,246,0.6);
+    text-align:center;
+    padding:32px;
+    font-size:0.82rem;
+    font-weight:300;
+    letter-spacing:0.3px;
+}
+
+footer .foot-logo{
+    color:var(--ivory);
+    margin-bottom:8px;
+    font-size:1.3rem;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+}
+
+/* ---------- FLOATING BUTTONS ---------- */
+.whatsapp-btn{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+
+    background:linear-gradient(135deg,#25D366,#128C7E);
+    color:#fff;
+
+    padding:15px 24px;
+    border-radius:50px;
+
+    text-decoration:none;
+    font-size:0.88rem;
+    font-weight:600;
+    letter-spacing:0.2px;
+
+    box-shadow:0 10px 28px rgba(37,211,102,0.4);
+
+    animation:pulse 2.4s infinite;
+    transition:.3s ease;
+}
+
+.whatsapp-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 34px rgba(37,211,102,0.5);
+}
+
+.top-btn{
+    position:fixed;
+    bottom:96px;
+    right:24px;
+    width:48px;
+    height:48px;
+    background:#fff;
+    color:var(--ink);
+    text-decoration:none;
+    font-size:1.2rem;
+    font-weight:600;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    box-shadow:var(--shadow-md);
+    border:1px solid var(--line);
+    transition:.3s;
+}
+
+.top-btn:hover{
+    background:var(--ink);
+    color:#fff;
+}
+
+@keyframes pulse{
+    0%{ transform:scale(1); box-shadow:0 0 0 0 rgba(37,211,102,0.6); }
+    70%{ transform:scale(1.05); box-shadow:0 0 0 14px rgba(37,211,102,0); }
+    100%{ transform:scale(1); box-shadow:0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ---------- REVEAL ---------- */
+.reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .8s ease, transform .8s cubic-bezier(.22,.9,.32,1);
+}
+
+.reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+        animation-duration:0.001ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:0.001ms !important;
+        scroll-behavior:auto !important;
+    }
+    .reveal{ opacity:1; transform:none; }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1024px){
+    .trust-grid{ grid-template-columns:repeat(2,1fr); }
+    .trust-item{ border-right:none; border-bottom:1px solid rgba(253,250,246,0.12); padding-bottom:20px; }
+}
+
+@media (max-width:860px){
+    .product-detail{
+        grid-template-columns:1fr;
+        gap:36px;
+    }
+
+    .product-media{
+        aspect-ratio:4/3.4;
+        max-width:440px;
+        margin:0 auto;
+    }
+
+    .product-info{
+        text-align:center;
+    }
+
+    .product-info h1{
+        font-size:2.1rem;
+    }
+
+    .contents{
+        text-align:left;
+    }
+}
+
+@media (max-width:768px){
+
+    .navbar{
+        padding:12px 5%;
+    }
+
+    .logo{
+        font-size:1.15rem;
+    }
+
+    .nav-links a{
+        padding:7px 12px;
+        font-size:0.7rem;
+    }
+
+    .nav-links a.nav-cta{
+        padding:8px 15px;
+    }
+
+    .product-section{
+        padding:40px 6% 60px;
+    }
+
+    .price{
+        font-size:2.1rem;
+    }
+
+    .contents ul{
+        grid-template-columns:1fr;
+    }
+
+    .contact{
+        padding:56px 6%;
+        margin:56px 4%;
+        border-radius:20px;
+    }
+
+    .contact h2{
+        font-size:1.9rem;
+    }
+
+    .whatsapp-btn{
+        bottom:16px;
+        right:16px;
+        padding:12px 18px;
+        font-size:0.78rem;
+    }
+
+    .top-btn{
+        bottom:82px;
+        right:16px;
+        width:42px;
+        height:42px;
+        font-size:1rem;
+    }
 }
 </style>
 </head>
 <body>
 
-<div class="container">
-<img src="hamper4.jpg">
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="back-arrow">←</span>
+        Mahi <span>Surprise</span> Hub
+    </a>
 
-<h1>SkinCare Premium Hamper</h1>
+    <div class="nav-links">
+        <a href="index.html#products">All Hampers</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://wa.me/7066503309" class="nav-cta">Order Now</a>
+    </div>
+</nav>
 
-<p>
-Customized birthday gifts, chocolates, greeting cards and surprise accessories.
-</p>
+<section class="product-section">
+    <div class="product-detail">
 
-<div class="price">₹1,999</div>
+        <div class="product-media reveal">
+            <span class="product-tag">Premium</span>
+            <img src="hamper4.jpg" alt="SkinCare Premium Hamper">
+        </div>
 
-<a href="https://wa.me/7066503309?text=I%20want%20to%20buy%20the%20SkinCare%20Premium%20Hamper" class="buy-btn">
-Buy Now
-</a>
+        <div class="product-info reveal">
+            <div class="eyebrow">Gift Hampers</div>
+            <h1>SkinCare Premium Hamper</h1>
+            <p class="tagline">A little pampering, beautifully packaged.</p>
 
+            <div class="contents">
+                <h4>🎁 What's Inside</h4>
+                <ul>
+                    <li>Customized Gifts</li>
+                    <li>Chocolates</li>
+                    <li>Greeting Card</li>
+                    <li>Surprise Accessories</li>
+                </ul>
+            </div>
+
+            <div class="price">₹1,999</div>
+
+            <a href="https://wa.me/7066503309?text=I%20want%20to%20buy%20the%20SkinCare%20Premium%20Hamper" class="btn">
+                Buy Now
+            </a>
+            <span class="secure-note">🔒 Secure ordering via WhatsApp</span>
+        </div>
+
+    </div>
+</section>
+
+<div class="trust-strip">
+    <div class="trust-grid">
+        <div class="trust-item reveal">
+            <div class="icon">🔒</div>
+            <p>Secure Payments</p>
+        </div>
+        <div class="trust-item reveal">
+            <div class="icon">🚚</div>
+            <p>Fast Delivery</p>
+        </div>
+        <div class="trust-item reveal">
+            <div class="icon">🎁</div>
+            <p>Premium Packaging</p>
+        </div>
+        <div class="trust-item reveal">
+            <div class="icon">💖</div>
+            <p>100% Handmade</p>
+        </div>
+    </div>
 </div>
+
+<section class="contact reveal">
+    <h2>Want Something Different?</h2>
+    <p>Message us on WhatsApp to build a fully custom hamper for your budget and taste.</p>
+    <a href="https://wa.me/7066503309" class="btn">Chat on WhatsApp</a>
+</section>
+
+<footer>
+    <div class="foot-logo">Mahi Surprise Hub</div>
+    © 2026 Mahi Surprise Hub · All Rights Reserved
+</footer>
+
+<a href="#" class="top-btn">↑</a>
+<a href="https://wa.me/7066503309" class="whatsapp-btn">💬 Order Now</a>
+
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach(el => revealObserver.observe(el));
+</script>
 
 </body>
 </html>
