@@ -3,430 +3,888 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Surprise Hamper</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<title>Women's Hampers — Mahi Surprise Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+:root{
+    --ink:#241f1e;
+    --ink-soft:#5a5150;
+    --ivory:#fdfaf6;
+    --ivory-deep:#f7f0e8;
+    --blush:#f6e4e2;
+    --blush-deep:#e9c9c6;
+    --rose:#b5646b;
+    --rose-deep:#8f4650;
+    --gold:#c19a5b;
+    --gold-light:#e4cd9c;
+    --gold-pale:#f3e6c9;
+    --line:rgba(36,31,30,0.08);
+    --shadow-sm:0 4px 20px rgba(36,31,30,0.06);
+    --shadow-md:0 12px 40px rgba(36,31,30,0.10);
+    --shadow-lg:0 24px 60px rgba(36,31,30,0.14);
+    --radius:18px;
+    --radius-lg:28px;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#fff9fb,#fff3f7);
-    padding:40px 20px;
+    font-family:'Poppins', sans-serif;
+    background:var(--ivory);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
+h1,h2{
+    font-family:'Cormorant Garamond', serif;
 }
 
-.page-title{
+img{
+    display:block;
+    max-width:100%;
+}
+
+a{
+    color:inherit;
+}
+
+::selection{
+    background:var(--blush-deep);
+    color:var(--rose-deep);
+}
+
+::-webkit-scrollbar{ width:10px; }
+::-webkit-scrollbar-track{ background:var(--ivory-deep); }
+::-webkit-scrollbar-thumb{ background:var(--gold-light); border-radius:10px; }
+
+a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+}
+
+/* ---------- EYEBROW ---------- */
+.eyebrow{
+    display:inline-block;
+    font-size:0.72rem;
+    font-weight:600;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:14px;
+}
+
+.eyebrow::before{
+    content:'';
+    display:inline-block;
+    width:26px;
+    height:1px;
+    background:var(--gold);
+    margin-right:10px;
+    vertical-align:middle;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 6%;
+
+    background:rgba(253,250,246,0.86);
+    backdrop-filter:blur(14px) saturate(160%);
+    -webkit-backdrop-filter:blur(14px) saturate(160%);
+
+    border-bottom:1px solid var(--line);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.5rem;
+    font-weight:600;
+    color:var(--ink);
+    letter-spacing:0.3px;
+}
+
+.logo .back-arrow{
+    font-family:'Poppins', sans-serif;
+    font-size:1.1rem;
+    color:var(--gold);
+    transition:.3s;
+}
+
+.logo:hover .back-arrow{
+    transform:translateX(-4px);
+}
+
+.logo span{
+    color:var(--rose);
+    font-style:italic;
+}
+
+.nav-links{
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-weight:500;
+    font-size:0.88rem;
+    padding:9px 18px;
+    border-radius:30px;
+    letter-spacing:0.3px;
+    transition:.3s ease;
+}
+
+.nav-links a:hover{
+    background:var(--ink);
+    color:var(--ivory);
+}
+
+.nav-links a.nav-cta{
+    background:var(--ink);
+    color:var(--ivory);
+    padding:10px 22px;
+}
+
+.nav-links a.nav-cta:hover{
+    background:var(--rose-deep);
+}
+
+/* ---------- PAGE HERO ---------- */
+.page-hero{
+    position:relative;
+    min-height:46vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    color:#ff4f81;
-    font-size:2.8rem;
-    margin-bottom:10px;
+    padding:80px 20px;
+    color:var(--ivory);
+    overflow:hidden;
+
+    background:
+        linear-gradient(180deg, rgba(28,20,19,0.58) 0%, rgba(28,20,19,0.74) 100%),
+        url("women3.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
-.subtitle{
+.page-hero-inner{
+    position:relative;
+    z-index:2;
+    max-width:640px;
+}
+
+.hero-eyebrow{
+    font-size:0.76rem;
+    font-weight:500;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+}
+
+.hero-eyebrow::before,
+.hero-eyebrow::after{
+    content:'';
+    width:32px;
+    height:1px;
+    background:var(--gold-light);
+}
+
+.page-hero h1{
+    font-size:3.4rem;
+    font-weight:600;
+    line-height:1.12;
+    letter-spacing:0.3px;
+    text-shadow:0 6px 30px rgba(0,0,0,0.25);
+}
+
+.page-hero h1 em{
+    font-style:italic;
+    color:var(--gold-light);
+}
+
+.page-hero p{
+    margin-top:18px;
+    font-size:1rem;
+    font-weight:300;
+    color:rgba(253,250,246,0.88);
+    max-width:460px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.6;
+}
+
+/* ---------- WAVE ---------- */
+.wave{
+    line-height:0;
+}
+
+.wave svg{
+    display:block;
+    width:100%;
+    height:60px;
+}
+
+/* ---------- SECTIONS ---------- */
+section{
+    padding:90px 8%;
+}
+
+.section-head{
     text-align:center;
-    color:#666;
-    margin-bottom:40px;
+    max-width:560px;
+    margin:0 auto 50px;
 }
 
+.section-title{
+    font-size:2.4rem;
+    font-weight:600;
+    color:var(--ink);
+    letter-spacing:0.3px;
+}
+
+/* ---------- HAMPER GRID ---------- */
 .hamper-grid{
-display:grid;
-grid-template-columns:repeat(2, 1fr);
-gap:15px;
-align-items:start;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:32px;
+    max-width:1200px;
+    margin:0 auto;
+    align-items:start;
 }
-
-
 
 .hamper-card{
     background:#fff;
-    border-radius:20px;
+    border-radius:var(--radius-lg);
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.3s;
-    display:flex;
-    flex-direction:column;
+    box-shadow:var(--shadow-sm);
+    border:1px solid var(--line);
+    transition:.4s cubic-bezier(.22,.9,.32,1);
 }
 
-.card-content{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-}
 .hamper-card:hover{
     transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
+    box-shadow:var(--shadow-lg);
+    border-color:var(--gold-light);
 }
 
-.hamper-card img{
+.card-media{
+    position:relative;
+    overflow:hidden;
+    aspect-ratio:4/3.6;
+    background:var(--ivory-deep);
+}
+
+.card-media img{
     width:100%;
-    height:400px;      /* Same height for all images */
-    object-fit:cover;  /* Prevents image distortion */
-    display:block;
+    height:100%;
+    object-fit:cover;
+    transition:.7s cubic-bezier(.22,.9,.32,1);
+}
+
+.hamper-card:hover .card-media img{
+    transform:scale(1.07);
+}
+
+.size-tag{
+    position:absolute;
+    top:14px;
+    left:14px;
+    z-index:3;
+    background:rgba(253,250,246,0.92);
+    backdrop-filter:blur(6px);
+    color:var(--ink);
+    border:1px solid var(--gold-light);
+    padding:6px 16px;
+    border-radius:20px;
+    font-size:0.68rem;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* thumbnail style-selector (small hamper only) */
+.card-media.has-thumbs::before{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height:74px;
+    background:linear-gradient(180deg, transparent, rgba(20,14,13,0.5));
+    z-index:2;
+    pointer-events:none;
+}
+
+.thumb-row{
+    position:absolute;
+    bottom:14px;
+    left:0;
+    right:0;
+    z-index:3;
+    display:flex;
+    justify-content:center;
+    gap:8px;
+}
+
+.thumb{
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    border:2px solid rgba(255,255,255,0.75);
+    background-size:cover;
+    background-position:center;
+    cursor:pointer;
+    padding:0;
+    transition:.25s;
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+}
+
+.thumb:hover{
+    transform:translateY(-3px);
+}
+
+.thumb.active{
+    border-color:var(--gold);
+    box-shadow:0 0 0 2px var(--gold-light), 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .card-content{
-    padding:25px;
+    padding:26px 24px 30px;
     text-align:center;
 }
 
 .hamper-card h2{
-    color:#333;
+    color:var(--ink);
+    font-size:1.5rem;
+    font-weight:600;
     margin-bottom:10px;
 }
 
 .description{
-    color:#777;
-    font-size:14px;
-    margin-bottom:15px;
-    min-height:40px;
+    color:var(--ink-soft);
+    font-size:0.9rem;
+    font-weight:300;
+    line-height:1.6;
+    margin-bottom:20px;
 }
+
 .contents{
     text-align:left;
-    background:#fff8fb;
-    padding:15px;
-    border-radius:12px;
+    background:var(--ivory-deep);
+    border:1px solid var(--line);
+    padding:18px 20px;
+    border-radius:var(--radius);
     margin-bottom:20px;
 }
 
 .contents h4{
-    color:#ff4f81;
+    color:var(--rose-deep);
     margin-bottom:10px;
-    font-size:16px;
+    font-size:0.82rem;
+    font-weight:600;
+    letter-spacing:0.5px;
 }
 
 .contents ul{
-    padding-left:18px;
+    list-style:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:7px 14px;
 }
 
 .contents li{
-    color:#555;
-    margin-bottom:6px;
-    font-size:14px;
+    color:var(--ink-soft);
+    font-size:0.84rem;
+    font-weight:300;
+    padding-left:20px;
+    position:relative;
+    line-height:1.4;
 }
-.price{
-    font-size:2.3rem;
+
+.contents li::before{
+    content:'✓';
+    position:absolute;
+    left:0;
+    color:var(--gold);
     font-weight:700;
-    color:#ff4f81;
-    margin-top:auto;
 }
+
+.price{
+    font-family:'Cormorant Garamond', serif;
+    font-size:2.2rem;
+    font-weight:700;
+    color:var(--rose-deep);
+    margin-bottom:16px;
+}
+
 .buy-btn{
     display:block;
     width:100%;
     text-align:center;
     padding:15px;
-    background:linear-gradient(135deg,#ff4f81,#ff7aa2);
-    color:#fff;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:#2b2117;
     text-decoration:none;
     border-radius:50px;
     font-weight:600;
-    margin-top:15px;
-    transition:.3s;
+    font-size:0.92rem;
+    letter-spacing:0.3px;
+    box-shadow:0 10px 26px rgba(193,154,91,0.32);
+    transition:.35s cubic-bezier(.22,.9,.32,1);
 }
 
 .buy-btn:hover{
-    transform:translateY(-2px);
+    transform:translateY(-3px);
+    box-shadow:0 14px 32px rgba(193,154,91,0.42);
 }
 
+/* ---------- TRUST STRIP ---------- */
+.trust-strip{
+    padding:56px 8%;
+    background:var(--ink);
+}
 
-.hamper-gallery{
+.trust-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-    padding:10px;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    max-width:1100px;
+    margin:0 auto;
 }
 
-.hamper-gallery img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:15px;
-    transition:0.3s;
-}
-
-.hamper-gallery img:hover{
-    transform:scale(1.03);
-}
-
-.hamper-card{
-    background:#fff;
-    border-radius:24px;
-    overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-    transition:.4s;
-    display:flex;
-    flex-direction:column;
-    height:100%;
-}
-
-.hamper-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 25px 45px rgba(0,0,0,.15);
-}
-
-.hamper-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-    gap:35px;
-    align-items:start;
-}
-.hero{
+.trust-item{
     text-align:center;
-    margin-bottom:50px;
+    color:var(--ivory);
+    padding:16px 10px;
+    border-right:1px solid rgba(253,250,246,0.12);
 }
 
-.hero h1{
-    font-size:3rem;
-    color:#ff4f81;
-    margin-bottom:10px;
+.trust-item:last-child{
+    border-right:none;
 }
 
-.hero p{
-    color:#777;
-    font-size:1.1rem;
+.trust-item .icon{
+    font-size:1.6rem;
+    margin-bottom:8px;
+    opacity:0.9;
 }
-.badge{
-    display:inline-block;
-    background:#ffe4ec;
-    color:#ff4f81;
-    padding:8px 15px;
-    border-radius:50px;
-    font-size:13px;
+
+.trust-item p{
+    font-size:0.8rem;
+    font-weight:400;
+    letter-spacing:0.3px;
+    color:rgba(253,250,246,0.85);
+}
+
+/* ---------- CUSTOM CTA ---------- */
+.contact{
+    background:linear-gradient(135deg,var(--ink) 0%,#3a2f2c 100%);
+    border-radius:var(--radius-lg);
+    text-align:center;
+    padding:76px 8%;
+    color:var(--ivory);
+    position:relative;
+    overflow:hidden;
+    margin:90px 5%;
+}
+
+.contact::before{
+    content:'';
+    position:absolute;
+    top:-60px;
+    right:-60px;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(193,154,91,0.25), transparent 70%);
+}
+
+.contact h2{
+    font-size:2.3rem;
     font-weight:600;
-    margin-bottom:15px;
+    color:var(--ivory);
 }
+
+.contact p{
+    margin:16px auto 0;
+    font-size:1rem;
+    font-weight:300;
+    color:rgba(253,250,246,0.82);
+    max-width:440px;
+    line-height:1.7;
+}
+
+.contact .btn{
+    display:inline-block;
+    margin-top:32px;
+    padding:15px 36px;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:#2b2117;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    font-size:0.92rem;
+    letter-spacing:0.3px;
+    box-shadow:0 10px 30px rgba(193,154,91,0.35);
+    transition:.35s cubic-bezier(.22,.9,.32,1);
+}
+
+.contact .btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 36px rgba(193,154,91,0.45);
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+    background:var(--ink);
+    color:rgba(253,250,246,0.6);
+    text-align:center;
+    padding:32px;
+    font-size:0.82rem;
+    font-weight:300;
+    letter-spacing:0.3px;
+}
+
+footer .foot-logo{
+    color:var(--ivory);
+    margin-bottom:8px;
+    font-size:1.3rem;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+}
+
+/* ---------- FLOATING BUTTONS ---------- */
+.whatsapp-btn{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+
+    background:linear-gradient(135deg,#25D366,#128C7E);
+    color:#fff;
+
+    padding:15px 24px;
+    border-radius:50px;
+
+    text-decoration:none;
+    font-size:0.88rem;
+    font-weight:600;
+    letter-spacing:0.2px;
+
+    box-shadow:0 10px 28px rgba(37,211,102,0.4);
+
+    animation:pulse 2.4s infinite;
+    transition:.3s ease;
+}
+
+.whatsapp-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 34px rgba(37,211,102,0.5);
+}
+
+.top-btn{
+    position:fixed;
+    bottom:96px;
+    right:24px;
+    width:48px;
+    height:48px;
+    background:#fff;
+    color:var(--ink);
+    text-decoration:none;
+    font-size:1.2rem;
+    font-weight:600;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    box-shadow:var(--shadow-md);
+    border:1px solid var(--line);
+    transition:.3s;
+}
+
+.top-btn:hover{
+    background:var(--ink);
+    color:#fff;
+}
+
+@keyframes pulse{
+    0%{ transform:scale(1); box-shadow:0 0 0 0 rgba(37,211,102,0.6); }
+    70%{ transform:scale(1.05); box-shadow:0 0 0 14px rgba(37,211,102,0); }
+    100%{ transform:scale(1); box-shadow:0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ---------- REVEAL ---------- */
+.reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .8s ease, transform .8s cubic-bezier(.22,.9,.32,1);
+}
+
+.reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+        animation-duration:0.001ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:0.001ms !important;
+        scroll-behavior:auto !important;
+    }
+    .reveal{ opacity:1; transform:none; }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1024px){
+    .page-hero h1{ font-size:2.7rem; }
+    .trust-grid{ grid-template-columns:repeat(2,1fr); }
+    .trust-item{ border-right:none; border-bottom:1px solid rgba(253,250,246,0.12); padding-bottom:20px; }
+}
+
+@media (max-width:640px){
+    .hamper-grid{
+        grid-template-columns:1fr;
+        gap:22px;
+    }
+}
+
 @media (max-width:768px){
 
+    .navbar{
+        padding:12px 5%;
+    }
 
-.hamper-grid{
-    grid-template-columns:repeat(2, 1fr);
-    gap:10px;
+    .logo{
+        font-size:1.15rem;
+    }
+
+    .nav-links a{
+        padding:7px 12px;
+        font-size:0.7rem;
+    }
+
+    .nav-links a.nav-cta{
+        padding:8px 15px;
+    }
+
+    section{
+        padding:56px 6%;
+    }
+
+    .section-title{
+        font-size:1.9rem;
+    }
+
+    .section-head{
+        margin-bottom:34px;
+    }
+
+    .page-hero{
+        min-height:auto;
+        padding:64px 20px;
+    }
+
+    .page-hero h1{
+        font-size:2.1rem;
+    }
+
+    .page-hero p{
+        font-size:0.88rem;
+    }
+
+    .hero-eyebrow{
+        font-size:0.64rem;
+        letter-spacing:2.5px;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after{
+        width:18px;
+    }
+
+    .card-content{
+        padding:20px 18px 24px;
+    }
+
+    .price{
+        font-size:1.8rem;
+    }
+
+    .contact{
+        padding:56px 6%;
+        margin:56px 4%;
+        border-radius:20px;
+    }
+
+    .contact h2{
+        font-size:1.9rem;
+    }
+
+    .whatsapp-btn{
+        bottom:16px;
+        right:16px;
+        padding:12px 18px;
+        font-size:0.78rem;
+    }
+
+    .top-btn{
+        bottom:82px;
+        right:16px;
+        width:42px;
+        height:42px;
+        font-size:1rem;
+    }
 }
-
-.hamper-card{
-    border-radius:12px;
-}
-
-.hamper-card img{
-    height:160px;
-}
-
-.card-content{
-    padding:10px;
-}
-
-.hamper-card h2{
-    font-size:14px;
-}
-
-.description{
-    font-size:11px;
-    min-height:auto;
-}
-
-.contents{
-    padding:8px;
-}
-
-.contents h4{
-    font-size:12px;
-}
-
-.contents li{
-    font-size:10px;
-    margin-bottom:3px;
-}
-
-.price{
-    font-size:1.2rem;
-}
-
-.buy-btn{
-    padding:8px;
-    font-size:11px;
-}
-
-.badge{
-    font-size:10px;
-    padding:5px 8px;
-}
-
-
-}
-
-
 </style>
 </head>
 <body>
-    <section class="hero">
-    <h1>💖 Women's Special Hampers</h1>
-    <p>Handcrafted luxury gift hampers filled with love, surprises and memories.</p>
-</section>
 
-<div class="container">
+<nav class="navbar">
+    <a href="index.html" class="logo">
+        <span class="back-arrow">←</span>
+        Mahi <span>Surprise</span> Hub
+    </a>
 
-   
-<div class="hamper-grid">
+    <div class="nav-links">
+        <a href="index.html#products">All Hampers</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://wa.me/7066503309" class="nav-cta">Order Now</a>
+    </div>
+</nav>
 
-        <!-- Small Hamper -->
+<div class="page-hero">
+    <div class="page-hero-inner">
+        <div class="hero-eyebrow">Women's Collection</div>
+        <h1>Gifts She'll <em>Treasure</em></h1>
+        <p>Handcrafted hampers filled with love, surprises, and little luxuries — for the women who mean the most.</p>
+    </div>
+</div>
 
-<div class="hamper-card">
+<div class="wave">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#fdfaf6" d="M0,224L80,202.7C160,181,320,139,480,133.3C640,128,800,160,960,176C1120,192,1280,192,1360,181.3L1440,171L1440,320L0,320Z"></path>
+    </svg>
+</div>
 
-
-<img src="women1.jpg" alt="Small Hamper">
-
-<div class="card-content">
-    <h2>Small Hamper 1</h2>
-
-    <p class="description">
-        A thoughtful surprise gift packed with love and premium goodies.
-    </p>
-
-    <div class="contents">
-        <h4>🎁 What's Inside:</h4>
-        <ul>
-            <li>Personalized Card & Necklace</li>
-            <li>Glimmer Nail Set</li>
-            <li>Pearl Necklace</li>
-            <li>Scrunchie</li>
-            <li>Ring</li>
-            <li>Lipstick</li>
-            <li>Star Keychain</li>
-            <li>Flower Hair Claw</li>
-        </ul>
+<section id="hampers">
+    <div class="section-head reveal">
+        <div class="eyebrow">Choose Your Size</div>
+        <h2 class="section-title">Our Hampers</h2>
     </div>
 
-    <div class="badge">✨ Best Seller</div>
+    <div class="hamper-grid">
 
-    <div class="price">₹699</div>
+        <!-- Small Hamper (3 photo styles, one product) -->
+        <div class="hamper-card reveal">
+            <div class="card-media has-thumbs">
+                <span class="size-tag">✨ Best Seller</span>
+                <img src="women1.jpg" alt="Small Hamper — style 1">
+                <div class="thumb-row">
+                    <button class="thumb active" data-img="women1.jpg" data-label="Style 1" aria-label="View style 1" aria-pressed="true" style="background-image:url('women1.jpg')"></button>
+                    <button class="thumb" data-img="women1-2.jpg" data-label="Style 2" aria-label="View style 2" aria-pressed="false" style="background-image:url('women1-2.jpg')"></button>
+                    <button class="thumb" data-img="women1-3.jpg" data-label="Style 3" aria-label="View style 3" aria-pressed="false" style="background-image:url('women1-3.jpg')"></button>
+                </div>
+            </div>
 
-    <a href="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Small%20Hamper"
-       class="buy-btn">
-       Buy Now
-    </a>
-</div>
+            <div class="card-content">
+                <h2>Small Hamper</h2>
+                <p class="description">
+                    A thoughtful surprise gift packed with love and premium goodies.
+                </p>
 
+                <div class="contents">
+                    <h4>🎁 What's Inside</h4>
+                    <ul>
+                        <li>Personalized Card &amp; Necklace</li>
+                        <li>Glimmer Nail Set</li>
+                        <li>Pearl Necklace</li>
+                        <li>Scrunchie</li>
+                        <li>Ring</li>
+                        <li>Lipstick</li>
+                        <li>Star Keychain</li>
+                        <li>Flower Hair Claw</li>
+                    </ul>
+                </div>
 
-</div>
+                <div class="price">₹699</div>
 
-<div class="hamper-card">
-
-
-<img src="women1-2.jpg" alt="Small Hamper">
-
-<div class="card-content">
-    <h2>Small Hamper 2</h2>
-
-    <p class="description">
-        A thoughtful surprise gift packed with love and premium goodies.
-    </p>
-
-    <div class="contents">
-        <h4>🎁 What's Inside:</h4>
-        <ul>
-            <li>Personalized Card & Necklace</li>
-            <li>Glimmer Nail Set</li>
-            <li>Pearl Necklace</li>
-            <li>Scrunchie</li>
-            <li>Ring</li>
-            <li>Lipstick</li>
-            <li>Star Keychain</li>
-            <li>Flower Hair Claw</li>
-        </ul>
-    </div>
-
-    <div class="badge">✨ Best Seller</div>
-
-    <div class="price">₹699</div>
-
-    <a href="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Small%20Hamper"
-       class="buy-btn">
-       Buy Now
-    </a>
-</div>
-
-
-</div>
-
-<div class="hamper-card">
-
-
-<img src="women1-3.jpg" alt="Small Hamper">
-
-<div class="card-content">
-    <h2>Small Hamper 3</h2>
-
-    <p class="description">
-        A thoughtful surprise gift packed with love and premium goodies.
-    </p>
-
-    <div class="contents">
-        <h4>🎁 What's Inside:</h4>
-        <ul>
-            <li>Personalized Card & Necklace</li>
-            <li>Glimmer Nail Set</li>
-            <li>Pearl Necklace</li>
-            <li>Scrunchie</li>
-            <li>Ring</li>
-            <li>Lipstick</li>
-            <li>Star Keychain</li>
-            <li>Flower Hair Claw</li>
-        </ul>
-    </div>
-
-    <div class="badge">✨ Best Seller</div>
-
-    <div class="price">₹699</div>
-
-    <a href="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Small%20Hamper"
-       class="buy-btn">
-       Buy Now
-    </a>
-</div>
-
-
-</div>
+                <a href="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Small%20Hamper"
+                   class="buy-btn"
+                   data-wa-base="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Small%20Hamper">
+                   Buy Now
+                </a>
+            </div>
+        </div>
 
         <!-- Medium Hamper -->
-        <div class="hamper-card">
-            <img src="women2.jpg" alt="Medium Hamper">
+        <div class="hamper-card reveal">
+            <div class="card-media">
+                <span class="size-tag">💝 Most Popular</span>
+                <img src="women2.jpg" alt="Medium Hamper">
+            </div>
 
             <div class="card-content">
                 <h2>Medium Hamper</h2>
                 <p class="description">
-    More gifts, more surprises, and a premium gifting experience.
-</p>
+                    More gifts, more surprises, and a premium gifting experience.
+                </p>
 
-<div class="contents">
-    <h4>🎁 What's Inside:</h4>
-    <ul>
-        <li>Birthday Card</li>
-        <li>Hoop Earings</li>
-        <li>Bracelate</li>
-        <li>Nail Polish</li>
-        <li>Flower Compact</li>
-        <li>Rose</li>
-        <li>Chocolate</li>
-        <li>Blue Heaven Lipstick</li>
-        <li>Initial Necklace</li>
-        <li>Keychain</li>
-        <li>Scrunchie</li>
-        <li>Teddy Bear</li>
-       
-      
-    </ul>
-</div>
-<div class="badge">💝 Most Popular</div>
+                <div class="contents">
+                    <h4>🎁 What's Inside</h4>
+                    <ul>
+                        <li>Birthday Card</li>
+                        <li>Hoop Earrings</li>
+                        <li>Bracelet</li>
+                        <li>Nail Polish</li>
+                        <li>Flower Compact</li>
+                        <li>Rose</li>
+                        <li>Chocolate</li>
+                        <li>Blue Heaven Lipstick</li>
+                        <li>Initial Necklace</li>
+                        <li>Keychain</li>
+                        <li>Scrunchie</li>
+                        <li>Teddy Bear</li>
+                    </ul>
+                </div>
+
                 <div class="price">₹999</div>
 
                 <a href="https://wa.me/7066503309?text=I%20want%20to%20buy%20the%20Medium%20Hamper"
@@ -437,47 +895,49 @@ align-items:start;
         </div>
 
         <!-- Large Hamper -->
-        <div class="hamper-card">
-            <img src="women3.jpg" alt="Large Hamper">
+        <div class="hamper-card reveal">
+            <div class="card-media">
+                <span class="size-tag">👑 Luxury Edition</span>
+                <img src="women3.jpg" alt="Large Hamper">
+            </div>
 
             <div class="card-content">
                 <h2>Large Hamper</h2>
-              <p class="description">
-    The ultimate luxury hamper loaded with premium gifts and surprises.
-</p>
+                <p class="description">
+                    The ultimate luxury hamper loaded with premium gifts and surprises.
+                </p>
 
-<div class="contents">
-    <h4>🎁 What's Inside:</h4>
-    <ul>
-        <li>Large Teddy Bear</li>
-        <li>Love Letter Card</li>
-        <li>Hoop Earings</li>
-        <li>Bracelate</li>
-        <li>Nail Polish</li>
-        <li>Flower Compact</li>
-        <li>Rose</li>
-        <li>Chocolate</li>
-        <li>Blue Heaven Lipstick</li>
-        <li>Initial Necklace</li>
-        <li>Keychain</li>
-        <li>Scrunchie</li>
-        <li>Bangles</li>
-        <li>Lip Balm</li>
-        <li>Kinder Joy</li>
-        <li>Chain</li>
-        <li>Blusher</li>
-        <li>Facewash</li>
-        <li>Mirror</li>
-        <li>Eyeliner</li>
-        <li>Kajal</li>
-        <li>Eye Shadow</li>
-        <li>Your Photos</li>
-        <li>Light In Box</li>
-        
-    </ul>
-</div>
-<div class="badge">👑 Luxury Edition</div>
-                <div class="price">₹3999</div>
+                <div class="contents">
+                    <h4>🎁 What's Inside</h4>
+                    <ul>
+                        <li>Large Teddy Bear</li>
+                        <li>Love Letter Card</li>
+                        <li>Hoop Earrings</li>
+                        <li>Bracelet</li>
+                        <li>Nail Polish</li>
+                        <li>Flower Compact</li>
+                        <li>Rose</li>
+                        <li>Chocolate</li>
+                        <li>Blue Heaven Lipstick</li>
+                        <li>Initial Necklace</li>
+                        <li>Keychain</li>
+                        <li>Scrunchie</li>
+                        <li>Bangles</li>
+                        <li>Lip Balm</li>
+                        <li>Kinder Joy</li>
+                        <li>Chain</li>
+                        <li>Blusher</li>
+                        <li>Facewash</li>
+                        <li>Mirror</li>
+                        <li>Eyeliner</li>
+                        <li>Kajal</li>
+                        <li>Eye Shadow</li>
+                        <li>Your Photos</li>
+                        <li>Light In Box</li>
+                    </ul>
+                </div>
+
+                <div class="price">₹3,999</div>
 
                 <a href="https://wa.me/7888048117?text=I%20want%20to%20buy%20the%20Large%20Hamper"
                    class="buy-btn">
@@ -487,8 +947,81 @@ align-items:start;
         </div>
 
     </div>
+</section>
 
+<div class="trust-strip">
+    <div class="trust-grid">
+        <div class="trust-item reveal">
+            <div class="icon">🔒</div>
+            <p>Secure Payments</p>
+        </div>
+        <div class="trust-item reveal">
+            <div class="icon">🚚</div>
+            <p>Fast Delivery</p>
+        </div>
+        <div class="trust-item reveal">
+            <div class="icon">🎁</div>
+            <p>Premium Packaging</p>
+        </div>
+        <div class="trust-item reveal">
+            <div class="icon">💖</div>
+            <p>100% Handmade</p>
+        </div>
+    </div>
 </div>
-</div>
+
+<section class="contact reveal">
+    <h2>Want Something Different?</h2>
+    <p>Message us on WhatsApp to build a fully custom hamper for your budget and taste.</p>
+    <a href="https://wa.me/7066503309" class="btn">Chat on WhatsApp</a>
+</section>
+
+<footer>
+    <div class="foot-logo">Mahi Surprise Hub</div>
+    © 2026 Mahi Surprise Hub · All Rights Reserved
+</footer>
+
+<a href="#" class="top-btn">↑</a>
+<a href="https://wa.me/7066503309" class="whatsapp-btn">💬 Order Now</a>
+
+<script>
+/* Scroll reveal */
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach(el => revealObserver.observe(el));
+
+/* Style-swatch selector for the Small Hamper's 3 photos */
+document.querySelectorAll('.thumb').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const card = btn.closest('.hamper-card');
+        const media = btn.closest('.card-media');
+        const img = media.querySelector('img');
+
+        img.src = btn.dataset.img;
+        img.alt = card.querySelector('h2').textContent + ' — ' + btn.dataset.label;
+
+        media.querySelectorAll('.thumb').forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        const buyBtn = card.querySelector('.buy-btn');
+        if (buyBtn && buyBtn.dataset.waBase) {
+            buyBtn.href = buyBtn.dataset.waBase + '%20(' + encodeURIComponent(btn.dataset.label) + ')';
+        }
+    });
+});
+</script>
+
 </body>
 </html>
